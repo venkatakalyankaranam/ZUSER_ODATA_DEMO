@@ -1,0 +1,97 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:smartMultiInput="sap.ui.comp.smartmultiinput" xmlns:f="sap.f" xmlns:sv="sap.ui.comp.smartvariants"
+	controllerName="com.bmigroup.qm.recordresults.inspection.points.controller.SelectionViewInspectionLots"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>pageInspectionLots}">
+		<content>
+			<f:DynamicPage>
+				<f:header>
+					<f:DynamicPageHeader>
+						<f:content>
+							<sv:SmartVariantManagement id="smartVariant" persistencyKey="smartVariantBar" showShare="false" showExecuteOnSelection="true"
+								entitySet="XXXXX" />
+							<smartFilterBar:SmartFilterBar class="sapUiNoContentPadding" id="idSmartFilterBarInspectionLot" persistencyKey="workListSmartFilterBar"
+								enableBasicSearch="true" useToolbar="false" filterBarExpanded="true" entitySet="ZQM_CDSD_RRINSPLOTS" smartVariant="smartVariant" showFilterConfiguration="false">
+								<smartFilterBar:controlConfiguration>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="Plant" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="1"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="InspWorkCenters" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="2"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="InspType" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="3"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="OrderNo" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="4"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="Insplot" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="5"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="Matnr" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="6"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="TxtMat" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="7"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="InspectionLotHasUsageDecision" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="8" filterType="single"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="pastrterm" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="9"/>
+									<smartFilterBar:ControlConfiguration mandatory="notMandatory" key="InspEndDate" visibleInAdvancedArea="true"
+										preventInitialDataFetchInValueHelpDialog="false" index="10"/>
+								</smartFilterBar:controlConfiguration>
+							</smartFilterBar:SmartFilterBar>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+						<smartTable:SmartTable id="idSmartTableInspectionLot" entitySet="XXXXX" tableType="ResponsiveTable" useExportToExcel="true"
+						useVariantManagement="true" useTablePersonalisation="true" header="XXXX"
+						showRowCount="true" smartFilterId="idSmartFilterBarInspectionLot" persistencyKey="workListSmartTable" enableAutoBinding="true"
+						requestAtLeastFields="XX,XX,Insp,Inspgin,XX,StasTxt,FllMrial,Inspection,offen_" demandPopin="true"
+						class="sapUiResponsiveContentPadding" ignoreFromPersonalisation="YAxisText,InspWorkCenters,StatusText,FullMaterial">
+						<Table growing="true" growingThreshold="50" itemPress="onTableItemPress" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}">	
+							<columns>
+								<Column hAlign="Begin">
+									<Text text="{i18n>inspectionLotColumn}"></Text>
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Insplot","leadingProperty":"Insplot"}'/>
+									</customData>
+								</Column>
+								<Column hAlign="Begin">
+									<Text text="{i18n>orderColumn}"></Text>
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "OrderNo","leadingProperty":"OrderNo"}'/>
+									</customData>
+								</Column>
+								<Column hAlign="Begin">
+									<Text text="{i18n>plantColumn}"/>
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Plant", "leadingProperty": "Plant"}'/>
+									</customData>
+								</Column>
+								<Column hAlign="Begin">
+									<Text text="{i18n>materialColumn}"></Text>
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Matnr","leadingProperty":"Matnr" }'/>
+									</customData>
+								</Column>
+								<Column hAlign="Begin">
+									<Text text="{i18n>materialDescColumn}"></Text>
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "TxtMat","leadingProperty":"TxtMat"}'/>
+									</customData>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation">
+									<cells>
+										<ObjectIdentifier title="" text="{Insplot}"/>
+										<Text text="{OrderNo}"/>
+										<Text text="{Plant}"/>
+										<Text text="{Matnr}"/>
+										<Text text="{TxtMat}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</smartTable:SmartTable>
+				</f:content>
+			</f:DynamicPage>
+		</content>
+	</Page>
+</mvc:View>

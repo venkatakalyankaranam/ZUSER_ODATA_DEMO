@@ -1,0 +1,89 @@
+Yday
+=====
+Deployment of the App to the ABAP system
+Manual uploading of APp to the system====> Cloud Credentials are not working you want to update into the system(/UI5/ABAP_REPOSITORY_LOAD) ===>SE38 
+Catalogs, Groups, FLPD Transactions to Configure the App as a Tile--->PFCG ROle and assignment of the Catalog and Grou p to the Role--->PFCG -->User (Using Semantic Object)
+Introduction -- oData Model-->Creation- generation of the CRUD methods and Registration-->Testin of the service from the GW client
+UI5 APp ---> for Query , Delete  and the remaining Operation we explained ===> PayLoad is req==> Create and Update
+PayLoad is not required for Query , delete and Read
+Key Parameters are required for Delete === > /EntitySet(Userid='1234')==> delete where condition
+Key parameters and PayLoad is Required for Update ===>Key param is required to identify the Record and PayLoad is the content to update
+App flow
+
+=========================================================================
+Extensions of Fiori
+One Example
+Smart Controls 
+Fiori Templates
+RAP Model ====> PreRequisites  ==>Eclipse/ADT Tools and CDS Views
+
+Standard Apps (UI5 Apps (Transactional (ABAP Prog for Fiori)) , Fiori elements based build on RAP and CDS)
+UI5 ====>coding is required .. .first case 
+2 nd case Fiori elements  or CDS ===>  CDS
+Fiori elements ===> Custom column List Report Template ====> Change the Format of the Data which is coming from the CDS 
+
+
+<sap.ui.core.ExtensionPoint>=====>Docuemnted in App Library
+======================================================================
+5 Ways of Extension
+View Extensions ===>
+Custom View content in the form of Fragments  (That relation will be captured in the manifest.json)==>ext, what is the view, where is the Fragment /custom content to be replaced)
+
+viewModification ===>
+Override the given control properties
+
+ViewReplacement ====> Change of the Whole View 
+controller Replacement ====>Controller ===>New controller 
+Controller Extension ====> Override method
+
+  =================>Super class
+
+Custom Ext ===> Standard App
+
+Doc Ref Link :   https://help.sap.com/viewer/e72f747389b340229f7fa343975bfa57/2021.000/en-US/79d46156acb67f5ce10000000a44147b.html
+
+============================================================================================================================
+Smart Controls / Smart Fields / Smart Table
+
+==============================================================
+UI5 consultant
+MockServer ==> Is a concept where you can work with your own service /Mimics the oData ===> Create Metadata Document and EntitySets Locally
+LocalService 
+utilizing the Mockserver concept for SmartField Example
+========================================================================
+
+FIORI ELEMENTS
+==============
+Design Pattern of FIORI :  Are used to speed up the development and for consistency L&F
+Less UI5 coding ===> CDS Views ==> Code Push down  
+Consistent L&F - Faster development 
+
+Annotations :  
+2 types--> 
+External Annotations (External to the UI5 i.e annotations are coming from the Service or from CDS)
+Local Annotations : Annotations which you are adding locally
+
+
+1.  SelectionField --->  to add a Field in the Filter BAR
+2.   Line Item ---->  To add the Field in the List
+3.  HeaderInfo
+4. ValueHelp Defn
+=================================================================================
+
+RAP - ABAP Restful Applications Programming --- Model 
+
+Classical /Traditional progmamming to ----> ABAP Prog Model for FIORI (FIORI)------>RAP (Cloud Instance of the ABAP + onPremise with the ABAP System)(CDS with Eclipse ADT Tools)
+
+
+Eclipse with the ADT Tools 
+
+
+
+
+
+
+
+
+
+
+

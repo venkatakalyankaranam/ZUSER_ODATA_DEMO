@@ -1,0 +1,197 @@
+ip : 122.175.7.147:1610
+Username : user21
+Password : welcome@77
+=========================================
+Discussion to use SAP Business Technology Platform deployments and Setup/prerequisites to deploy on Gateway server/Cloud Platform
+Programming aspects of SAP Ui5 and  concepts (API Usage and Controls) - Views/Controllers/Lifecycle etc...
+Discussion on Model view controller architecture in UI5--Identification of Code atrifacts in the FIORI Apps
+Example on execution of different views like XML,java script views
+Debugging concepts in SAP UI5/Fiori Apps/ Gateway External debugging
+Data Binding Modes / Binding Properties
+=========================================================================
+Navigation
+
+Data Binding
+
+Data : 
+
+what kind of data formats that ui5 understands
+
+1.  Browser
+
+1. JSON Data====> JSON Model (Client side model) -- > maintaining of the data locally 
+  var oDataObject =  {   "EmpName" : "" , "EmpID" : "" }
+  var aDataEmployees = {
+                      "Employees" : [
+
+					{   "EmpName" : "Venkata" , "EmpID" : "123" },
+					{   "EmpName" : "Kalyan" , "EmpID" : "456" }
+
+				   ]
+                            };
+Client Side Models ----> Two way Model    (Binding Mode)
+
+Two way Binding Mode ===> Data flows from Ui5 to the model and vice versa
+JSON is 2 way model
+Through API you can set the  Binding Mode -----> JSON Model . setBindingMode ("")
+
+JSON Model 
+
+var oModel = new sap.ui.model.json.JSONModel();
+var oDataObject =  {   "EmpName" : "" , "EmpID" : "" };
+oModel.setData(oDataObject);
+
+componnet.js
+
+the model set in the component --> you can access any where GLOBAL MODEL
+the model set to the View ----->  Local Model you can access in the view only
+the model set to control ui5 --> with in that control
+
+=======
+init (Component.js) ---> life cycle method of the component it will be triggered when life cycle of the component starts- one time during ther whole life cycle of the component
+
+=============>
+
+this ---> referes to the component
+
+this.setModel(oModel , "oModel");
+
+
+View 
+-----
+
+this.getView().setModel (xx ,xx);
+
+this.getView().byId("<control id>");
+
+<Button id="myButton">
+
+var oMyButton = this.getView().byId("myButton");
+oMyButton.setText("My Button for Navigation");
+use API methods to modify the button behaviour
+
+setVisible()
+
+=================================================================
+
+
+2. Binding Modes
+
+2Way  (JSON and XML by default 2 way)
+1 Way  (oData- server side model -----> you are calling the oData Service from ui5 ==>server /sap data)
+and 1 Time (ResourceModel --- i18n)
+
+Model to Ui5======>NBo vice versa 
+
+1 time =====>Only once 
+
+=================================================
+
+Binding Types
+
+1.  Property Binding
+2.  Aggregation Binding
+
+--------------------->  ui5 element--ui5 cob=ntrol
+
+Property Binding=====> Binding the Model to the property of the UI control -----> one Value 
+
+List / Table====> these controls are used to display multiple records
+
+===============>aggregation Binding =====> Aggregation  of the control to the Model property whose type is an array
+
+items -->aggregation of LIst ====> Model property -- that is of Array
+
+var oModel = new sap.ui.model.json.JSONModel();
+ var aDataEmployees = {
+                      "Employees" : [
+
+					{   "EmpName" : "Venkata" , "EmpID" : "123" },
+					{   "EmpName" : "Kalyan" , "EmpID" : "456" }
+
+				   ]
+                            };
+oModel.setData(aDataEmployees);
+this.getView().setModel(oModel , "oModel");
+
+
+
+<List  items ="{oModel>/Employees}" />
+
+Binding Modes 
+--------------------->ui5 screen
+
+var oDataName = {"Name": ""};
+initializa a json model
+set the data 
+this.setModel(oModelName , "oModelName");
+<Input value = {oModelName >Name}>
+<Text text="{oModelName>Name}">
+
+
+Enter your Name  : Input field ------>>
+Display Your Name  : 
+
+=====================================================
+
+1. Input Field
+2. Text
+3. Button
+4. Simple Form
+5. Select
+6. List
+7. Table
+8. Fragments
+=====
+JSOn
+Binding Modes
+Programming - dynamically creating the controls
+Binding Types - property and Aggregation
+
+====================
+
+Independent UI controls and Dependent  === Simple Vs Complext 
+
+Inde===> 
+
+7. sap.m.Table (Mobile Table)   ---- sap.ui.table.Table (Dependent Table (Controls )) -- > Label / Text each column we are using Independent control
+
+Aggregation : 
+   Columns
+
+======================
+
+XML View====> Easy to build and Recommended
+JS View===>JS (Yo have better control in terms of API Usage )
+HTML - > views can also use in UI5
+JSON --> json view
+
+===============================================================
+Fragments
+
+Light weight UI Parts and Reusable in entire project
+they do not have a controller individual controller
+which ever the view using - you need to use that view controller as a Processing programming part for that fragment
+View1 -- > view 1 controller should handle all the Event Handlers of that fragment
+
+Reusable UI --> Fragment
+Reusable code -->Java script models.js (general methods Reusable code)
+Format the data ==>Formatters
+
+First Name Last Name -Full name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

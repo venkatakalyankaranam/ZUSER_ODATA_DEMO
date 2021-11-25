@@ -1,0 +1,248 @@
+Tomorrow
+===========
+
+Create JSOn -- Update , Delete and Read ===>Employee List
+
+
+
+Programming strategies of SAP --- >  Fiori programming with oData ,  RAP and what is Cap and differences b/n these models
+
+1.  Introduction to oData and Models
+2.  CRUD Operations with ODta
+
+
+=======================================================================================================
+
+Dynpro ==> UX Strategy
+BSP --- >  outdated
+
+SAP EP WD Java + PDk===>Out dated ===> Java guys
+
+====>ABAP WD ABAP ====> running in the same system ==== > In Usage ===>SAP UX Strategy
+
+
+SAP UI5 and FIORI ===>Current UX strategy
+
+
+3 Technologies 
+
+
+1.Dynpro
+2. WD ABAP with FPM
+3. UI5 and FIORI 
+=================================
+Activation of the Fiori App -->
+Tools -->webide + BAS
+Lifecycle methods controllers +
+
+
+1. JSON
+2. XML  
+
+3. oData 
+4.18n
+
+Binding Types ===>Binding Modes
+Custom control -->Use control 
+
+FIORI LAUNCHPAD + Configuration + Check points
+oData---> oData Service ---> CRUD oData
+We wil lrun the App from FIORI LAUNCHPAD
+Deployment of the Fiori App --->Gateway 
+Debug from the back end 
+====================================================
+
+
+Programming strategies (FIORI)
+
+1. Abap programming for FIori ---> Traditional programming to develop the FIORI App
+
+    UI5 App ---->o Data Service ---->ABAP Layer ====> Metdriven -----> UI5 development effort is more ====> Time consumption
+L&F extra time =====>
+
+
+Download, filtering ,sorting ==>Personalization extra coding is required
+
+Logic is running on the Application Layer --> Performance is slow as compared to the RAP Model
+Data dictionary you can use
+Tables, domains, data element ---> you can use
+
+Full control on your 
+
+2. RAP ---->Restful abap programming model===> Meta data driven --->Annotation ====> Less time for UI5 
+Annotations
+Templates Fiori --->Fiori elements --->Fiori designpatterns
+No Efforts ----> GATEWAY----> CDS Approach (Hana based==> CDS Views)
+
+Most of the logic in CDS ---> data base instead of running app Layer====> Faster execution
+you can use the existing ABAP Dictionary
+
+Data definition, data entities you can use the ABAP Dictionary.
+
+Dis Adv ====>
+5 or 6 FMs 
+
+CDS ---> FMs ====>AMDP (Reducing the Performance).
+Standard Apps ---> FIORI ELEMENTS with RAP Programming standard CDS are  available
+Extension is complex ------
+
+3 . Cloud Application programming---- CAP
+Cloud oriented
+Supports only on SQL and HANA 
+SQL is used at the time development
+On deployment to the Hana it created the CDS Entities
+Defining the data models right from the scrach
+You do not have access to the Data Dictionary ===>Complete DB Atrifacts you have to define
+Full control --- Full stack development
+
+Dis Adv ====> You can not use the Data Dictionary 
+=====================================================================================================================
+
+FIORI APPs ---> Gateway System 
+
+Use the Apps ---->User must exists in the system 
+
+
+Ex :  User who wants to just approve the compliants 
+
+============================> My INBOX (Approval App)======> Custom Work flow ====>   COSTLY in terms of maintaining the User 
+
+==========================> Side by Side Ext=====> S/4 Hana ====>  BTP (Subscription or licenc end users is less compared to the )
+
+
+In App Ext  ====> Existing system ---> Extending the any stuff
+Side by side ext --->SAP BTP Platform
+
+FiORI Launch pad ======>Single entry point to the end users to access the App
+Intet based/ Hashbased Navigation
+?#SemanticObject-action
+
+SalesOrder ---display
+
+/ui2/semobj ====>customer definition for the Custom Fiori app 
+/ui2/semobj_sap====>where you can see the semantic objects and actions for standard Apps
+=========================================================================================================
+
+Fiori Launchpad ----> Accessed by using the Tcode  /ui2/flp ---> Internet explorer ---- > 
+
+
+Transcation---> SAP FIORI Tile --> GUI for HTML
+
+Fiori App is a Transaction ----> VA01  ==============>  VA01 
+Fiori App ----> it will reflect
+
+
+Fiori App (UI5 + oData )---------->    Using the Tcode (changed and added one more tab)
+Extend this Fiori App + Extend oDat======> FIori 
+(FIORI ELEMENTS  -->No controllers and Views )---->Annotations (CDS if the filed is having section annoration)--> In Fiori App it will be displayed in the selection criteria
+RAP Example
+
+Fiori app (Annotations of the CDS- Fiori elements App )----> CDS  ======> one field in the CDS-- extend the CDS with one field in cds give the annotation
+Your changes will Reflect in FIORI with out changing any thing 
+
+(only cds ext)
+
+Fiori App --->WD ABAP App (FIORI App ---->Linked with the WD ABAP Application name)--->se80 wd abap 
+Reflect in the FIORI
+-------------------------------------------------------------------------------
+
+FIORI APP 
+
+Ext Points ---->    UI5 control changes---> view changes -- >controller ext ---->View Replacements --> Controller Replacement
+
+Yoiur Requirement  ---->if the ext pont is there -->Ext 
+
+If ext points in the App Library =====>
+2 ways
+
+======================
+
+1. View Replament and Controller Replacement ====>one disadv 
+(In future if SAP releases new functionality in view of SAP Note on the same View/controller)-----> your Ext will not adapt the same.
+2. Ext its from both the ways UI5 and oData 
+
+=================>Performance 
+
+
+=========================================
+
+Fiori LaunchPad
+
+Catalog
+Group
+Target Mapping 
+
+Group is nothing but subset of the Catalogs--->combination of different tiles from the different catalogs
+
+GROUP is assigned to the PFGCG role ---> PFCF Role is assigned to end user
+=============================================================================================================
+oData
+=======
+
+1. I have to create oData Service with all CRUD Operations on a custom Table 
+2. Register that service in Gateway maintenance -- service registry
+3. Create a UI5 Application to perform the crud operations 
+4. Deploy and configure and execute it from FLP
+=============================================================================================================
+
+1. oData 
+Open Protocol - dev by Microsoft -- defacto std for all SAP Fiori App to get the data from SAP
+Ui5 ---> Business data directly
+WD ABAP + WD Java --->RFC (FW which understands the RFC Protocol)
+UI5 ---> Any SAP Data you have to convert into the Format which is understandable by UI5 (Browser)
+
+UI5-->Gateway-->Backend SAP
+ATOM----> Relation ship 
+
+HTTP Methods 
+
+1. Query - multiple records-  GET -----------------> select * from table into <itab>
+2.READ to get one  Record --->GET-----------------> select single * from <table> into <wa>
+2. Create -----> POST------------------------------------------>inset  <table> from <wa>
+3. Update------->PUT/PATCh------------------------------------->update <table> set <wa>
+4. Delete ----->DELETE ---------------------------------------->delete from <table> where key= ""
+==========================================================
+Function Import======> GET/POST
+
+
+Convert the SAP Data into the oData format
+
+Gateway project ---> SEGW ----> Service Builder ----> Project 
+
+Entity ---------> WA  -->Structure 
+EntitySet   ---->ITAB ---> Table  ----->  Multiple Record
+
+SEGW Project ---------> Created Entity ---> EntitySet ---->GENERATE THE ATRIFACTS 
+
+4 classes for you
+out of 4 classes 2 are abstract classes (Basese classes - Model Provider and Data Provider ) 2 are ext classes  (data Provider ext and Model provider DPC MPC)
+one model Registry
+1 service Registration----> Service 
+
+Service you have to Register---->  /iwfnd/maint_service =====>all Gateway services ====> add the service , activate the ICF note , assign system alias and load the metadata
+you can run the service ---->
+
+GW Client ====> to check the whether your service is running /not / data also /  Test your service all Entitie
+
+With all the Operations --->Give it to UI5
+======================================================================================
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
