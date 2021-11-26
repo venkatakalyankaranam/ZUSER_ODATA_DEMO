@@ -1,0 +1,257 @@
+UI5 Vs Fiori
+--------
+Client renderer Library JS Library API ----> Ui5 Controls --> Methods ---> 
+
+
+
+Fiori ---> Italian Flower---> App----> Set of Apps of Different Technologies different Domain Area
+
+Fiori App Library
+
+
+Analytical --- 
+
+3 App Types 
+
+
+
+Fiori ---> Guided Information to end user ----->  
+
+Transactional --->  UI5  coding with oData / CDS 
+Analytical App ----> Hana =====> Configure the KPI Tiles with the help of CDS Views
+Fact Sheet---> Factsheet  ---> Hana ====> Backend coding In terms of CDS 
+
+
+wave 1
+    25 Apps  Std 
+   Wave 2 ---> 250 Apps
+Wave 300 + 
+Wave 4, Wave 5
+
+App Library
+
+Simple
+Intuitive
+Role based
+Responsive
+
+1:1:3 --- one user one scenario 3 screens ---> SAP FIORI Simple
+
+===========================
+App ID 
+:F means its build based on UI5 Technologies /  :   Standard App - build based on Ui5 / UI5 tools : KPI Design tiles
+
+
+::: UI5 :::::::
+1.  Custom App (If the std App will not provide the Req functionality of the customer  + customization with the std App is not possible) 
+2.  Using KPI Tiles --->  Analytical App ---> Hana --> (No need of UI5 coding) --> Use case Display Information in graphs + table format
+3. Using the standard App + Possible Ext of the std App
+
+App ID for Transaction : VA01
+
+Webdynpro Abap Apps ---> WD ABAP Application
+
+===================
+
+Ui5 App --->  SAP System 
+
+Fiori LaunchPad  :  Tiles (Configure) ---> App 
+
+
+----> Fiori LaunchPad Designer ===> Ui5/ Fiori consultant  ===> Configure the App (/n/ui2/flpd_cust)
+
+----> Fiori Launchpad ===> Users Entry Point ==> FLP :  /n/ui2/flp
+==========================================================
+
+Technologies
+--------------
+Ui5 -->java and java script ===>  Jave script ==> API mostly JScript Syntax
+var
+new 
+API 
+
+UI5 controls ---> Buttons /Radio buttons ====> HTML5 + SAP L&F --->  UI5 control
+
+HTML5  ==>CSS (SAP Look & Feel +  CSS )
+
+Horizontal Line in UI5 as a 
+
+<hr></hr>
+
+html5
+javascript
+css
+json---> representation of data key value pairs
+json data ---> client side
+==========================================================
+Libraries
+
+sap.m == >  95 % of the controls from this Library all are Responsive 
+
+
+
+====================>   UI5 Version
+
+1:XX:XX
+
+1 === > Major Release (Remove the Libraries , they removed Existing Properties )
+XX ===>Minor Release (Adding a new property to the control , Behaviour Changes of the Properties/ functionalities)
+XX ===> Patch :  Bug Fixing 
+
+==========================================
+1. You should not use the Higher version while developing than the one which the App is Targetted
+UI5 Version Version  :  1.71
+===> 1.96 developing--- >  Ui5 version 1.71 ====>Before deployment in to the system
+
+
+-------------------------
+=================> Ui5 system Version
+
+     Launchpad : https://xx/sap/bc/ui2/flp?sap-client=310&sap-language=EN#Shell-home
+     Designer Admin : http://xx/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?scope=CUST&sap-client=310&sap-language=EN
+     UI5 Version : http://xx/sap/public/bc/ui5_ui5/
+
+
+==========================>
+
+Deployment Options 
+===================
+
+Architecture
+
+Fiori App ===> 3 layers 
+
+1. UI5 Layer (Ui5 controls  => Screens -- Ui5 views )
+2. oData Layer (middle layer)
+3. ABAP / Backend /S4H
+
+2 deployments
+
+HUB Deployment    
+
+OData Layer/service  + Ui5 components --> 1 ABAP Stack - SAP Front end system or Gateway system (IWFND)
+ABAP Layer Actual system (where the business logic resides : FM , Tables , Data Dictionary ) ===>  SAP Backend system (IWBEP)
+
+Secure - Adv
+Basis Perspective- It is difficult to maintain
+
+Embedded Deployment
+=====================
+SAP_GWFND -- > Every thing inside one system
+Maintenance will be easy
+
+
+
+UI5 App Ready 
+
+Tools : 
+========
+
+what is required 
+
+WebIDE  (Local WebIDE + WebIDE as a Service in the Neo Environment) -->WebIDE is a Service
+WebIDE (This service not available for the Trail version SAP BTP)=======>  Business Applications Studio (BAS)
+
+If your company Purchased the Global Account in the cloud (Business Contact b/n your customer and SAP)
+SubAccount with Neo Environment ===> WebIDE 
+
+Local Personal WebIDE  (practice / Not Productive Purpose).
+https://tools.hana.ondemand.com/#sapui5
+
+
+
+
+BAS --> Trail Account  (Cloud Foundry)
+Open the Chrome and Launch the BTP Trail (Create an Account if not available or use your suser id)
+BAS is a Service 
+DEV SPACE
+Environment ---> FIORI MOBILE ABAP
+===================================================
+
+1:20 to 2 PM ==>Lunch break
+
+2.00 PM
+
+Next topic  : Project structure , default methods , index.html , Component.js ,manifest.json etc
+1 Example Hello World and deployments
+
+Creation of the Project
+1. Fiori Templates or Project Freestyle  (Building from the scrach)
+
+
+Root Control
+
+sap.m.App ==> Root control for all UI5 controls /Elements
+
+App----> Aggregation ---->Pages
+SplitApp ---> Aggregation masterPages and detailPages ===> MyInbox  . Approval App all are with this Usecase
+
+Page is a UI5 view which contains set of Elements 
+
+Page ---->  As aggregation to App control
+
+==========================
+
+HelloWorld App 
+
+index.html
+Component.js
+
+Locally from WebIDE ---> index.html ---->  3 script sections  1.  Loading the UI5 App Library on to the client 2.  Initiating the component / Triggering the component 3. Referring the component in the Body of the HTML Page
+When ever you are running from the FLP===> Component.js (No index.html will trigger when you run from LaunchPad)
+Configuring the UI5 Apps in the FLPD ---> UI5 component Name with the name space
+
+Component.js ---> Manifest.json
+
+3 sections
+manifest.json
+sap.app
+sap.ui
+sap.ui5
+
+
+
+App -->control
+View  ---> one Page  --- >  With some Content
+
+
+index.html/pattern #<SemanticObject> - <Action>
+=================================================
+Use the GITHUB REPOSITORY to store our code 
+Adv :  Version control
+       Multiple developers can work simultaniously
+       DevOps Integration 
+       Proper Access and Authorization - secure
+
+WebIDE --- >  (Neo env -BTP ) -- > GIT Service 
+
+BAS ---> (Cloud foundry - BTP)   no SAP Provided GIT Service  - Open source GITHUB
+
+=================================================================
+
+Navigation
+Data Transfer between the 2 vies
+
+2 
+
+EnterName
+DisplayName
+
+Enter your name  :   Input field  (Input Field)  - Button    =====================>    Your name is XXXXX  (Text field)   (Back Button)
+
+Name transferred with the Global JSON Model
+
+=========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
