@@ -1,0 +1,61 @@
+CAP Introduction
+Cap Example
+Fiori Certification
+Mobile Application -- MDK
+===============================================
+
+CAP==>Cloud Application Programming
+Set of Libraries, tools and languages to develop the enterprise app
+Data Domain / Functionality====================>  CDS
+You are not using any of your existing ddic ====>Definining through CDS- Data Model 
+
+
+   CAP       ===================================> RAP
+
+1.  Support Cloud-->Deploy to the cloud environ===================   RAP Supports both cloud and onPremise
+2.  Focus on Mostly on Domain /Functionality             =========> every thing
+3.  UI5 Layer --->Based on the Annotation	==================> Fiori elements and Annotations
+4. DBS  (CDS Model now DEV SQLite -->HANA CLoUD Instance)  (Open Source )     ===>  S/4 or abap stack DB
+Java/Node.js   
+
+============                                       ========================>ABAP
+
+
+Mobile applications 
+
+Hybrid Approach ==> ui5 app ---> WRAPPER for Android .apk ====> Apachi cordova ====>  ===>  Deploy to the Mobile 
+Mobile dev KIT--->Native approach
+
+
+Catalog/ Group/ Target Mapping / Roles
+=========================================
+
+
+UI5 App/ Transaction /WD App / URL
+---------------------------------
+
+End User ===> you have configure 
+1. Catalog----> tiles and Target Mappings (Linkage between the semantics (Semantic object + Action = Intent) and your actual application)
+ CATALOGS 
+
+TC   BC
+
+SAP_TC_<DM> _XXX
+Custom Catalog ----> Your custom tile or Target Mapping referencing to the Standard One
+
+Sales Manager  ===> multiple tiles (Access all the tiles )
+
+Group :  subset of TC ===>How manyno of tiles you added here those Tiles are visible to the End User
+
+USERS  :   Provide access to the Users 
+
+    1. PFCG  (Role --->  Catalog --> Group to the Role) + authorization to RFCs + oData Services +
+
+    2. Role to assign to user
+
+<Button id=""   text    class="sapuiTinyMarginLeft"
+
+
+
+
+
